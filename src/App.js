@@ -1,12 +1,12 @@
 import './App.css';
-import img from './img.png';
+import Dictionary from "./Dictionary";
 
 function App() {
   return (
     <div className="App">
-      <div className="Dictionary">
-        <h1>Dictionary App</h1>
-        <img src={img} alt="Dictionary" className="Img" />
+      <div className="container">
+      <h1>Dictionary</h1>
+      <Dictionary />
         </div>
     </div>
   );

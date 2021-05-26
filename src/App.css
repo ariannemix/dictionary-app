@@ -1,13 +1,4 @@
-.Dictionary {
+.container {
+  max-width: 600px;
   margin-top: 40px;
-}
-
-h1 {
-  text-align: center;
-}
-
-img {
-  max-width: 300px;
-  display: block;
-  margin: 0 auto;
 }
