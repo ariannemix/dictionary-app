@@ -27,7 +27,7 @@ function handleResponse(response) {
     return (
         <div className="Dictionary">
             <form onSubmit={handleSubmit}>
-        <input type="search" onChange={handleInput} className="Input" />
+        <input type="search" onChange={handleInput} placeholder="Search a word" className="Input" />
         <input type="submit" value="Search" className="btn btn-primary"/>
       </form>
       <Results results={results} />
