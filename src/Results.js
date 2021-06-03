@@ -4,10 +4,13 @@ import "./Results.css";
 
 export default function Results(props) { 
     if (props.results) {
-        console.log(props.results.synonyms)
-        return <div className="Results">
+            return <div className="Results">
             <h2 className="Word">{props.results.word}</h2>
             <p className="Phonetics">{props.results.phonetics[0].text}</p>
+            <figure>
+                <audio controls src={props.results.phonetics[0].audio}>
+                </audio>
+            </figure>
             {props.results.meanings.map(function(meaning, index) {
                 return (<div key={index}>
                     <Meaning meaning={meaning} />
