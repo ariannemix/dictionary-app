@@ -1,3 +1,16 @@
-.Word {
-  margin: 20px 0 0;
+.Results .Word {
+  background-color: white;
+  padding: 15px 15px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.07);
+  margin-top: 20px;
+  border-radius: 6px;
+}
+
+.Results .Word audio {
+  width: 40%;
+}
+
+.Results .Word p.Phonetics,
+.Results .Word h2 {
+  margin-left: 15px;
 }

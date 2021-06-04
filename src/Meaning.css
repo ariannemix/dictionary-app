@@ -1,7 +1,25 @@
 .Definition {
-  margin-top: -24px;
+  margin: -24px 0 1px;
+  font-weight: 500;
 }
 
-.PartOfSpeech {
-  margin: 20px 0px;
+.Meaning {
+  background-color: white;
+  padding: 15px 15px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.07);
+  margin-top: 20px;
+  border-radius: 6px;
+}
+
+ul.List {
+  list-style-type: none;
+}
+
+.Example {
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.Example::first-letter {
+  text-transform: capitalize;
 }

@@ -1,0 +1,12 @@
+.Synonym {
+  padding-right: 7px;
+}
+
+.Synonyms p {
+  padding-left: 32px;
+}
+
+.Synonyms .Label {
+  font-weight: 500;
+  padding: 7px 7px 0 0;
+}

@@ -4,33 +4,44 @@ import "./Dictionary.css";
 import Results from "./Results";
 
 export default function Dictionary() {
-const [input, setInput] = useState("");
+const [input, setInput] = useState("flower");
 let [results, setResults] = useState(null);
+let [loaded, setLoaded] = useState(false);
 
 
 
 function handleResponse(response) {
-    console.log(response.data[0]);
     setResults(response.data[0]);
+}
+
+function search() {
+    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${input}`;
+    axios.get(apiUrl).then(handleResponse);
 }
 
     function handleSubmit(event) {
         event.preventDefault();
-        let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${input}`;
-        axios.get(apiUrl).then(handleResponse);
+        search();
     }
 
     function handleInput(event) {
         setInput(event.target.value);
     }
 
-    return (
+    if (loaded) {
+        return (
         <div className="Dictionary">
-            <p>What word would you like to know?</p>
-            <form onSubmit={handleSubmit}>
-        <input type="search" onChange={handleInput} placeholder="Search" className="Input" />
-        <input type="submit" value="Search" className="btn btn-primary"/>
-      </form>
-      <Results results={results} />
-      </div>)
+            <div className="Search">
+                <h3>What word would you like to know?</h3>
+                <form onSubmit={handleSubmit}>
+                    <input type="search" onChange={handleInput} defaultValue="eg: flower" className="Input" />
+                </form>
+            </div>
+            <Results results={results} />
+        </div>)
+    } else {
+        search();
+        setLoaded(true);
+    }
+    
 }
